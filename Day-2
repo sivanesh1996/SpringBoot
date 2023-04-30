@@ -1,0 +1,37 @@
+To display hello world:
+
+dependencies:
+
+thyme leaf
+spring web
+
+PROJECT STRUCTURE:
+
+source/main/java -->controller,model
+
+source/main/resourses
+static-->css
+application.properties-->file connectivity
+
+pom.xml --> dependencies
+
+Spring, Spring boot difference:
+
+xml-->lots of configuration
+
+convention over configuration-->using annoation-->spring boot understand
+
+Controller-->core-->central part of application
+
+ANNOTATION:
+@Controller
+@GetMapping("/index") -->url
+@ResponseBody  -->response as string
+
+To view a html template:
+
+if no response body , it returns the html iniside
+source/main/resourse-->then template/welcome.html-->templates
+In this html only we use thyme leaf and get values dynamically
+
+

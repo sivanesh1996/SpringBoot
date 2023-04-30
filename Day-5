@@ -1,0 +1,16 @@
+FORM HANDLING PROCESS : HTML5
+
+Dependencies:
+Spring web
+Thymeleaf
+
+src/main/resources
+static-->css,js,bootstrap
+template-->html
+
+template-->new -->other-->web->html
+name the file
+eventest.html
+
+action=""--> attribute which controller method to call
+

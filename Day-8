@@ -1,0 +1,16 @@
+THYME LEAF BASIC ATTRIBUTES:
+
+Definition:
+It is a server side template engine
+used for creating dynamic web pages
+spring controller will speak with HTML using Thymeleaf
+
+Attributes:
+th:text
+th:if
+th:each
+
+th->name space
+
+
+

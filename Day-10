@@ -1,0 +1,89 @@
+DISPLAY TABLE IN CONSOLE:
+
+To display table in cmd by getting inputs by java enitity class
+and display in console through JPA
+
+Ctrl + Shift + P in VS code
+spring intializer->create maven project
+aritifact id: console
+packaginf type:JAR
+
+Dependency:
+spring JPA->data base handle mapping library
+postgres->postgres DB connecting library
+
+resources/application.properties: -->configure postgres
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+
+localhost->server
+5432->port
+postgres->DB name
+
+Spring boot is ready to connect with psql .It uses psql driver
+
+We need to create mapping for table in psql
+Model class or POJO or Entity class or Domain class:Object relation 
+mapping is done and to interact through model class and program manipulate data from DB
+
+create a java class as src/main/Employee.java .Employee is table name but here E is caps
+create data variables as per table columns as private.For date use 
+java.util.date package
+create getter,setter,constructor,toString by right click the fields
+and source action->generate getters...
+
+toString ->print current field value
+
+This java class will map postgres table as model.for this MAke the serializable. implement the class with Serializable interface
+
+public static final long serialVersionUID=1L; ->to make the class serializable and deserializable and to use the object
+
+Next, to say this class maps what table[above class name,these @] -> 
+@Entity  ->to say as model class ->to map table
+@Table(name="employee")  ->map postgres employee table
+
+To map primary key use @Id above empid field because empid is primary key
+For auto-incremented value,user defined value use @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+.IDENTITY ->user defined value for table
+.AUTO ->auto increment values
+
+name,dob,gender column is not null ->@Column(nullable=false) ->above String name
+dob to specify date dataType -> @Temporal(TemporalType.DATE)
+
+.DATE ->to take date only because data dataType takes date,time with micro seconds.so to filter date only we use this
+
+We can genrate it easily automatic using JPA project
+
+For url only we need Controller, so in this class it not needed
+
+We can run query through repository. Mapped table has to be created as 
+repository. For this create interface in main/EmployeeRepository extends
+JpaRepository and must give which genric as which class its pointing
+EmployeeRepository extends JpaRepository<Employee,Integer>
+here,Integer -->primary id is integer
+
+
+pre-defined queries in JpaRepository
+
+To make this app as console application-> go to SpringBootApplication and implemnts CommandLineRunner. Then add unimplemented method.
+In this method what we gives will displayed as output in cosole
+
+We wont give query directly but through repository by using pre-defined methods and to call it.So to use EmployeeRepository in springbootapplication use @Autowired EmployeeRepository employeeRepository above main()
+Now we can use EmployeeRepository interface pre-defined method by its obj ref variable employeeRepository.
+Now in run() body,
+//to select * -> findAll()
+
+System.out.println(employeeRepository.findAll());
+
+Now,RUN the program
+OUTPUT in console
+
+FLOW-> 
+employee table create employee class and map entity,column,primary key,
+temporal type.THen create repository extends JpaRepository give entity name,primary key's datatype .and in console application give command line runner,autowire employee repository,overide run() and use findAll().It calls toString and display all rows as output in console.
+If we display this output in web page,its called web application
+
+

@@ -1,0 +1,42 @@
+SPRING BOOT APPLICATION USING VS CODE:
+
+check whether java is installed
+in terminal:
+java --version
+
+Open VS Code-->extension-->java extension by microsoft
+supporting depencies will be automatically installed
+
+extension-->spring boot extension by pivotal
+
+Press ctrl+shift+P
+search spring-->spring initializer create maven project
+
+select latest version, then java  
+package;com.example
+artifact id: demo
+packaging type:jar
+java:11
+dependecnies: spring web,thyme leaf
+
+press enter: select diretorry for save project-->generate
+press yes for download dependecies maven,and other
+
+like spring boot project structure,it appears
+
+After every maven depencies are downloaded, then in SpringBootApplication above main() Run|Debug appears
+
+Create controller class in src/main and start work like as in spring boot
+
+Create a method and with root url ("/") ie.GetMapping("/") annotation and with response body annotation and return a string directly from controller
+
+Go to  SpringBootApplication (projectname application) and on top right click run icon or in lower left in spring boot dashboard press run icon and you can its running in debug console 
+
+ABove there is icon for restart and stop server
+
+go to browser and run localhost:8080
+output displayed
+
+
+
+

@@ -1,0 +1,42 @@
+URL:UNFORM RESOURCE LOCATOR
+web address
+
+For spring,3 types:
+
+1]root url: 
+
+www.google.com
+localhost/
+
+2]path variable: Web Service
+
+extra from root
+
+localhost:8080/add/10/10
+in 8080 , we will have domain name
+8080 here is port number
+
+10 and 10 is value
+
+url with parameters
+
+3]url with parameters: GET/POST -http Methods
+GET- variable transfer in url
+POST-transfer via encrypted
+
+along with root
+
+?parameter=value
+using ? and &
+& [ambescent] for seperators
+
+localhost:8080/add?a=10&b=20
+
+All url are controlled by controller
+
+@GetMapping("/add/{a}/{b}")
+@PathVariable("a")int a,@PathVariable("b")int b
+
+To take value from url:
+@RequestParam("a")int a
+

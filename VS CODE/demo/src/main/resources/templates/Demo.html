@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+  <div style="background-color: blue; color: antiquewhite;">
+<h3 th:text="${temp}"></h3>
+<h4 th:if="${flag == true}">Hi.Flag is true</h4>
+
+<table style="border-style:solid; border-width: 2px; border-color: brown;">
+<th>
+    <td>Employee</td>
+</th>
+<tr th:each="emps : ${employee}">
+    <td th:text="${emps}"></td>
+</tr>
+
+</table>
+  </div>
+</body>
+</html>   

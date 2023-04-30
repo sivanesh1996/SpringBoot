@@ -1,0 +1,38 @@
+TO VIEW THE RESULT IN ANOTHER HTML:
+
+To play with data:
+->use Model class in spring framework
+  *use in parameter of controller
+->in this program, we are binding result variable with even or not even based on condition
+
+THYMELEAF:
+Server side template engine
+*To make the page behave dynamically
+for this inside html tag
+
+<html xmlns:th="http://www.thymeleaf.org">
+here th->thyme leaf name space
+to get predefined syntax: 
+th:text="${result}"
+
+result ->String attributeName
+even/not even ->Object attribute value
+we are binding object with value even/not even
+
+span is an inline html element
+
+If we make html changes in html page,we need to restart server is not necessary by:
+application.properties: It is the complete configuration file for spring project
+here,
+spring.thymeleaf.cache=false;
+
+its by default true, it means if we make changes in html,it 
+will keep in cache.If we make it false means it gives upto date data.
+So,from now if we make any changes in html page, we dont need
+to restart the server but in controller if we make changes we need to restart the server
+
+To Install Thyeme leaf plugin:
+help->eclipse market place->thyme leaf search
+
+
+INPUT THROUGH FORM ELEMENT --> CALL AN CONTROLLER --> FINDS EVE/NOT EVEN AND THROUGH MODEL ATTRIBUTE SEND RESULT TO ANOTHER PAGE

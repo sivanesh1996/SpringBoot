@@ -1,0 +1,30 @@
+How to correctly http methods:
+
+GET method is used to locate a particular resource in server.
+To get the home page,login page like that
+
+POST method is used to send the data to server.
+Like submitting form.
+
+If we send sensitive information from form like password 
+through GET method, in url the password will be explicitly 
+visible.So for this we should go for POST method
+
+
+IN html form action if we use POST method we should be use PostMapping annotation in
+controller
+
+
+HTML page call and use it 
+In Browser we type url and get html page.Use GetMapping.
+--> GetMapping, if used get method in html, in controller we should use GetMapping
+
+We cannot call post method directly from url
+
+Through form, we send data to server-->use post method (standard)
+Here use post method in html,so we should use PostMapping in controller.
+
+Form process controller -->PostMapping
+
+
+

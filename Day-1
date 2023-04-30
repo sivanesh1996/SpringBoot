@@ -1,0 +1,42 @@
+Web Application Architecture:
+
+Normally 2 types applications:
+1.stand alone application
+
+Ex:MS Word
+
+2.Web Application:
+
+google,gmail
+applcation on server
+through uniform resource locaton we use the application
+
+main component:web server
+
+3 tier client server architecture:
+
+web browser-->client
+
+web browser(google.com)-->web server -->data base remote-->google app output(response)
+
+Layer 1:
+client
+Layer 2:
+web server
+Layer 3:
+DB
+
+DB as server link to webserver has default directory.
+web server has server side scripting langiage (spring)
+java means server tom cat
+
+Model -> pojo class having getter and setter
+View -> template engine connects to controller not model directly
+
+
+req -->web server --> server side scripting -->DB ==> NO SECURITY
+
+web server --> controller -->model -->Db -->through view -->browser display
+
+This is standard pattern
+

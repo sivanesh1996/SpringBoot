@@ -1,0 +1,4 @@
+To use existing maven project
+
+file-->import-->maven-->exisiting maven project-->
+select the folder -->pom.xml listed in project-->add project to working set and name-->finish
