@@ -1,0 +1,48 @@
+Genrate java entity class automatically to connect with postgres:
+
+To connect java and postgres, we should download JDBC driver
+https://jdbc.postgresql.org/download/
+
+Then,download Eclipse IDE for Enterprise Java Developers:
+eclipse.org -->download package--> Eclipse IDE for Enterprise Java Developers
+
+https://www.eclipse.org/downloads/packages/
+
+Open 
+Eclipse IDE for Enterprise Java Developers ->file -> new JPA project or others ->Jpa
+
+project name:JPADemo;run time:java 11[in my system:jre] -> next ->next ->platform: generic ; JpaImplementation ->download library [to auto generate model class] ->select latest eclipse edition
+
+IAm unable to download library .So i use manage library->new->name:eclipselink->add exeternal jars option and input the jar file [javax.persistence.Convert] from below link
+http://www.java2s.com/Code/Jar/j/Downloadjavaxpersistence210rc1jar.htm
+
+Connection:postgres
+name:postgres
+next
+add the postgres downloaded driver
+In new driver definition dialogue box,select the current driver JAR in NAme/Type-> then in JAR,remove previous jar and all the the downloaded driver and press ok
+
+database:postgres [DB name]
+url:in end /dataBaseName
+username:
+password:
+
+Test connection->success
+
+Open perspective
+
+in src, right click new->package
+name:com.example.model
+Right click the package,new ->JPA entities from tables
+THis means for set of tables in database ,java entity class automatically created
+
+Schema: public
+select the required table->next->If there is more than 1 table, we have to give one to one OR one to many ,if 1 table,its not needed->next->
+KEy generator:Identity [ for primary key, manual entry] 
+select Always generate optional JPA anotations and DDL parameters->next->it shows class name and click finish
+
+NOw in Employee.java , annotations we give in last session was automatically created
+
+
+Basically in projects, design DB with schema,tables then DB link to eclipse project and create model classes and copy in spring boot web app and then create repository ,controller
+
