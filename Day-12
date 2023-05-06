@@ -1,0 +1,45 @@
+To view postgres database rows in webpage by spring boot web app:
+
+In last session, we display postgres database table in console by toString()
+THis displays all rows in toString()
+To display certain rows:
+By using employee object,display required field by getter method.
+For this we need List
+
+---------------
+
+Now we move from console application to web Application
+
+we need 2 dependencies spring web and thymeleaf
+Instead of creating new appication, we can add dependencies in pom.xml
+
+https://start.spring.io/
+
+->maven project,fill other details as per our project
+add dependencies , spring web,thyme leaf
+Then click Explore
+
+In pom.xml, copy the 2 dependencies
+and paste it in vs codes pom.xml
+
+Now libraries will be auto-downloaded
+
+Now project is ready as webapp
+
+Now in console application, remove implements commandlinerunner and 
+autowired and the overrided method.this means our project is a web application.
+We are not going to give input through form.
+
+Now in src/main create a MainController class and use @Controller
+
+Autowired the repository in this class
+
+use getmapping and a method which returns a html page
+create list,use findAll,Model object and method addAttribute
+
+Now we sent table data as object through addAttribute
+
+In resources/template , create html file
+
+There will be n number of rows, so we use th:each in table row thymeleaf template syntax.this will iterate and run.In table data use th:text
+
