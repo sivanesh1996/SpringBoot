@@ -1,0 +1,75 @@
+CREATE WEB SERVICES REST API USING SPRING BOOT:
+BASIC CONCEPTS FOR CRUD OPERATIONS:
+
+create a new project: 
+group id: com.anigna
+artifact id:api
+java 11
+packaging type:war
+
+dependencies:
+spring data jpa
+postgres driver
+
+create 3 folder in api:
+controller,model,repository
+
+in model -->Employee.java
+Spring boot->convention over configuration
+Put the required annotations in entity 
+
+@Table annotation is used to map different table name if the entity class name is different. If the class name is same,then no problem
+
+Properties name should be same as Table meta column name.If its different, we can give annotation @Column(name="name here")
+but as per convention,properties name should be same as column name.
+
+Generate empty constructor,constructor with parameters,getters,setters by right click source action
+
+To link with postgres ,application.properties
+5432 ->default postgres port
+
+to generate postgres relevant queries, hibernate [jpa framework]
+-Spring application will link through Postgres's JPA
+
+Next,create repository
+EmployeeRepository interface which extends JpaRepository <Model name,Primary key> and give @Repository
+
+This repository will give our required DB functions
+
+Create a controller RestController and give @RestController
+Normal @Controller is used if we input through web
+
+Here,by using repository takes employee details and display in json format in postman through api call.So use annotation
+
+use @GetMapping("/getALLEmployees")
+ method return tye List<Employee>
+return employeeRepository.findAll();
+
+We need to use dependency injection for repository
+@Autowired
+private EmployeeRepository employeeRepository
+
+class name and @RestController is same.It should not be same because predefined defined and our class name should not be same
+So,i rename controller class as ApiController
+
+FLOW:
+Entity maps to postgres table ->application.properties:psql's url,username,password -> Respostiory extends jpaRepository and map the model through generics -> create RestController and autowire the repository and take all employeedata through getmaping and findAll() of repository
+
+Run the Application
+
+Open postman: use GET and call through url localhost:808/getALLEmployees
+and click Send
+Output is displayed in json format
+
+Like this we can use n number of function calls
+
+Now,create another function to get employee data by id
+@PathVariable is used beacause input given through url
+return type is Optional because either return employee data or empty
+
+Now ,restart the server
+
+In postman , localhost:808/getALLEmployees/1000
+Now,it displays employee data with id=1000
+
+
