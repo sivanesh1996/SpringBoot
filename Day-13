@@ -1,0 +1,61 @@
+In spring boot project,how to set bootstrap environment framework:
+CRUD operations through boot strap interface calling spring boot services.
+
+Springs front end -default template engine-Thymeleaf.Its advantages are
+-html5 full support
+-light weight
+-simple and effective
+
+Create new project as usual->
+Group Id: com.anigna
+Artifact id:base [ from this project we can further extend]
+Java11
+Dependencies:
+Spring web
+Thyme leaf
+
+In bootstrap website,how we can download required JS,Css:
+Goto: https://getbootstrap.com/
+
+Click->read docs 
+
+We have to copy a html code from bootstrap and paste it in resources/templates: startup.html
+
+create a package [folder] in main/base 
+package name:controller
+In this package:TemplateController.java
+
+In root url, we have to run
+@GetMapping("/")
+home()
+return the html file
+
+You can run and see the html file
+
+Go to bootstrap website,click download
+
+Download Compiles CSS and JS
+and extract
+In css folder, to get complete bootstrap functions we can use bootstrap.To get minimum feature,use bootstrap.min
+In js folder also , bootstrap and bootstrap.min file
+
+In our project, resources/static , create a new folder assets
+This means here only we will add css,js 
+Inside asset, create folder js
+Inside asset,create folder css
+
+Copy bootsrap,bootstrap.min in css and paste it in assets/css in our projects workspace
+Repeat same for js
+
+In link tag in html
+<link href="assets/css/bootsrap.min.css" rel="stylesheet">
+LIKEWISE IN
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+In applicaton.properties:[Normally html will be kept in cache and work,so to break this] [changes in html need not be reloaded]
+spring.thymeleaf.cache=false
+
+
+ 
+
+
