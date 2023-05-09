@@ -1,0 +1,37 @@
+In spring boot, difference[functionalities,where to use] between repository and services
+
+Object Relational mapping [Persistance] [hibernate] through our repository in project contacts Model and make the methods available for the repository
+
+Object Relational mapping functions  [Persistance]
+
+Repository -> data access layer
+- directly contacts db and manipulate data
+
+In last project , we have auto-wired repository in Controller, but using repository directly in controller is not recommended
+Rather than calling repository diretly from controller , its recommended to call services and from services data has to be accessed 
+
+Service is like a business[logic] layer [write required code] that links repository  . Service first links with controller.
+
+Service -> links business layer and repository [data access layer]
+
+So as per rules,remove the reposiory autowired in Controller. Then create a folder names service inside java/api folder . Create a class EmployeeService.java and give @Service above class name
+
+Requirement: findbyid
+
+Autowire repository in service class and write a function name getEmployeeById with return type Optional<Employee> with parameter int empid and return findbyid from repository
+
+In controller, autowire the service class and in the method return employeeService.getEmployeeById(id)
+
+Run the program and output through postman
+
+This is Enterprise application pattern ie.writing code layer by layer so that security,concept ensure
+
+RECAP: MOdel, Map repo to Model for default db functions,autowire the repository in a service and call the required methods through controller
+
+Now, it seems like we are replicating the method in controller to service but its not like that
+
+Requirement:
+If we call employee id, it takes his experiece from db and calculate basic pay,total salary 
+-Multiply based on experiece with basic salary
+
+

@@ -10,20 +10,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.anigna.api.Model.Employee;
 import com.anigna.api.Repository.EmployeeRepository;
+import com.anigna.api.Service.EmployeeService;
 
 @RestController
 public class ApiController {
     
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private EmployeeService employeeService;
 
-    @GetMapping("/getAllEmployees")
-    public List<Employee> getAllEmployee(){
-        return employeeRepository.findAll();
-    }
-
+   
     @GetMapping("/getEmployee/{id}")
     public Optional<Employee> getEmployee(@PathVariable Integer id){
-        return employeeRepository.findById(id);
+        return employeeService.getEmployeeById(id);
+    }
+
+    @GetMapping("/getSalary/{id}")
+    public double getSalary(@PathVariable Integer id){
+    return employeeService.calculateSalary(id);
     }
 }
