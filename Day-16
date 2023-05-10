@@ -1,0 +1,136 @@
+Create RestApi services, and create CRUD application:
+1]view all employee details.http method:GET Method. /api/v1/employee
+2]view one particular employee details.GET Method. /api/v1/employee/:id
+3]create new values. POST method. /api/v1/employee
+4]update a employee. PUT method. /api/v1/employee/
+5]Delete an employee by id. DELETE method. /api/v1/employee/:id
+v1 ->version 1 
+There will be frequent updates in api
+The type of http method is very important
+
+In Service class, autowire the repository
+
+To view all employees:
+method name: retrieve() ->user defined
+return type list of employees
+use findAll() -> pre defined
+
+In controller, auto wire the repository
+ @GetMapping -> GET method of http protocol -> /api/v1/employee
+return type: List of employees
+method name:getAllEmployees() 
+return employeeService.retrieve();
+
+We didnt give request mapping at each method,instead we give above class
+@RequestMapping("/api/v1/employee")
+If we didnt give any url, it will class this url
+
+Check output in postman  /api/v1/employee
+output in json -->json format:automatic work of spring boot [default task]
+
+
+To view one particular employee:
+
+service class:
+
+return type:Optional<Employee>
+Why optional? If employee not found , returns null
+method: retrieveOne(int empid)
+use findById(empid)
+
+controller:
+@GetMapping("/{id}") --> api/v1/employee/id
+method:public ResponseEntity<Employee> getEmployeeById(@PathVariable ("id")int id)
+use retrieve() and store as Optional<Employee> employee
+use isPresent(),get() from Optional
+ResponseEntity -> header message
+HttpStatus.OK ->header
+HttpStatus.NOT_FOUND ->header
+
+In postman,if result came
+in status: 200 OK
+if result not came, in status:404 NOT FOUND
+This is also kind of throwing error message
+
+To create new values in table:
+
+service class:
+create(Employee employee) ->getting input in json
+return type: Optional<Employee>
+use existsById ->EmployeeRepository class with getId() ->Employee class and return Optional.empty() -> return empty object
+else id not already found
+Optional.of(employeeRepository.save(employee))->employee object return
+
+Controller:
+@PostMapping ->POST method ->/api/v1/employee
+method:saveEmployee(@RequestBody Employee employee) ->passing json
+Optional<Employee> _employee=employeeService.create(employee)
+if(_employee.isPresent())
+return "The employee data has been saved successfully"
+else
+return "Employe already exists"
+
+In postman:
+POST Method
+In body menu choose JSON
+and input data in json
+and create new value in postgres
+
+Update:
+
+Service class:
+If id already exists only we can update
+
+method: public Optional<Employee> update(Employee employee)
+if(employeeRepository.existsById(employee.getId())
+return Optional.of(employeeRepository.save(employee))
+else
+return Optional.empty();
+
+Controler:
+@PutMapping
+method: public String updateEmployee(@RequestBody Employee employee)
+Optional<Employee> _employee=employeeService.update(employee);
+if(_employee.isEmpty()) 
+return "The employee data doesnot exists"
+else
+return "The employee data has been updated successfully"
+
+
+In postman:
+method:PUT
+/api/v1/employee/
+
+edit in json
+and send
+
+It gives return messages accordingly
+
+DELETE:
+If employee id already exists ,delete 
+
+Service class:
+method:public String delete(int empid)
+if(employeeRepository.existsById(empid))
+employeeRepository.deleteById(empid)
+  return empid +"deleted successfully"
+else
+  return "The employee data doesnt exists in records"
+
+controller:
+
+@DeleteMapping("/{id}")
+method:public String deleteEmployeeById(@PathVariable("id") int id)
+return employeeService.delete(id)
+
+IN postman:
+DELETE method
+pass empid in url
+it gets deleted
+if given emp id not found,it cannot delete anything and it returns the message
+
+LAYERS:
+POSTGRES -> employee table ->Entity -> repository ->service [business logic] -> controller -> API caLLS POSTMAN consume
+
+
+This api calls can be called by Android/ios , Rect/Angualar , thymeleaf [template] webpage
