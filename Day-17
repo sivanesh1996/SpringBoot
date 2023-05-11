@@ -1,0 +1,39 @@
+Creation of Entities for DB tables automatically:
+Required plugin: Telosys: auto code generate,open source 
+Postgres DB JDBC driver-JAR file ->https://jdbc.postgresql.org/
+
+Open sts -> Help -> eclipse market place ->telosys ->install
+Create -> new -> spring starter project
+
+Name:JPADemo
+Type:Maven
+Java:11
+Packaging: WAR
+
+Dependency: Spring data JPA,Spring web,Thymeleaf
+
+Difference between telosys and jpa is using telosys we can generate Entity in our project packages
+
+create a new package: com.example.demo.model [inside this entity autogenerate]
+
+
+In project name in left side, right click ->properties-> telosys tools ->initialize
+package->where to genrate entity class ->root package: com.example.demo.model
+Templates ->using templates only plugin runs 
+click->Get available bundels->java jpa entities ->download. after installed [ok done] click apply
+
+In left side,there create a telosystools ->lib folder ->paste the downloaded postgres jar file [required DB driver]
+-> database.dbcfg -> new -> DB type ->POSTGreS
+in url -> edit the db name at the end and type user name and password
+Test connection ->Connection:ok 
+Information: Get data information ->shows info regarding db
+meta data: schema->public : click get tables,column,primary key,foreign key
+CLICK create model
+
+Now Postgresql.dbrep ->->select table name and select all columns required for entity creation and use Model:Links between entities : one to one ,one to many if need if there are more than one entities.
+In code genreation tab, select the class and in drop down,click java jpa entities -> java jpa entity class [select] and click generate
+
+Now java entity class is generated using telosys
+
+
+

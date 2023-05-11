@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Telosys Database Repository --><root>
+    <tableList databaseId="0" databaseName="POSTGRESQL" databaseProductName="PostgreSQL" generation="2023-05-11 16:22:39">
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Dept" name="dept" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="deptid" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="int4" inputType="number" javaName="deptid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Deptid" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="deptname" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="varchar" inputType="text" javaName="deptname" javaType="java.lang.String" jdbcTypeCode="12" label="Deptname" maxLength="10" notNull="false" selected="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Emp" name="emp" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="empid" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="int4" inputType="number" javaName="empid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Empid" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="empname" dbNotNull="false" dbPosition="2" dbSize="20" dbTypeName="varchar" inputType="text" javaName="empname" javaType="java.lang.String" jdbcTypeCode="12" label="Empname" maxLength="20" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="location" dbNotNull="false" dbPosition="3" dbSize="10" dbTypeName="varchar" inputType="text" javaName="location" javaType="java.lang.String" jdbcTypeCode="12" label="Location" maxLength="10" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="deptid" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="int4" inputType="number" javaName="deptid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Deptid" notNull="false" selected="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Employee" name="employee" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="int4" inputType="number" javaName="id" javaType="java.lang.Integer" jdbcTypeCode="4" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="false" dbPosition="2" dbSize="200" dbTypeName="varchar" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="200" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="experience" dbNotNull="false" dbPosition="3" dbSize="10" dbTypeName="int4" inputType="number" javaName="experience" javaType="java.lang.Integer" jdbcTypeCode="4" label="Experience" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="designation" dbNotNull="false" dbPosition="4" dbSize="200" dbTypeName="varchar" inputType="text" javaName="designation" javaType="java.lang.String" jdbcTypeCode="12" label="Designation" maxLength="200" notNull="false" selected="true"/>
+        </table>
+    </tableList>
+</root>
