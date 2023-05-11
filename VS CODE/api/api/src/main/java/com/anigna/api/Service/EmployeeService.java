@@ -28,5 +28,25 @@ public class EmployeeService {
             return Optional.of(employeeRepository.save(employee));
         }
     }
+
+    
+    public Optional<Employee> update(Employee employee){
+        if(employeeRepository.existsById(employee.getId())){
+            return Optional.of(employeeRepository.save(employee));
+        }
+        else{
+            return Optional.empty();
+        }
+    }
+
+    public String delete(int empid){
+        if(employeeRepository.existsById(empid)){
+            employeeRepository.deleteById(empid);
+            return empid +"Deleted Successfully";
+        }
+        else{
+            return "Employee data doesnt exists in record";
+        }
+    }
     
 }

@@ -132,5 +132,7 @@ if given emp id not found,it cannot delete anything and it returns the message
 LAYERS:
 POSTGRES -> employee table ->Entity -> repository ->service [business logic] -> controller -> API caLLS POSTMAN consume
 
+Repository should not be called directly.In service class, repository can be used.
 
-This api calls can be called by Android/ios , Rect/Angualar , thymeleaf [template] webpage
+
+This api calls can be called by Android/ios , Rect/Angualar , thymeleaf [spring boot template engine] webpage
