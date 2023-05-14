@@ -1,0 +1,16 @@
+body{
+    background: url("/media/bg.jpg");
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+a{
+    padding: 8px 16px;
+    font-size: 20px;
+    color: #000;
+    background-color:aquamarine;
+    text-decoration: none;
+}

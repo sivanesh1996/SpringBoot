@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="/src/main/resources/static/assets/css/style2.css" type="text/css">
+</head>
+<body>
+    <h1>SS Enterprises</h1>
+    <h3>Product Management</h3>
+    <form action="/productslist" method="get">
+        <button type="submit">Get All products</button>
+    </form>
+
+    <form action="/productslist/productslist" method="get">
+        <label for="">Enter product id:</label>
+        <input type="text" name="pid" placeholder="Enter a product id">
+        <button type="submit" >Get this product info</button>
+    </form>
+    <ul>
+        <li class="products">Products</li>
+        <li><a href="">Create New</a></li>
+        <li><a href="">View All</a></li>
+        <li><a href="">Modify</a></li>
+        <li><a href="">Delete</a></li>
+    </ul>
+
+
+
+
+</body>
+</html>
