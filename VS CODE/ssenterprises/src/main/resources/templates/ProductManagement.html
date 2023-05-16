@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Management</title>
-    <link rel="stylesheet" href="/src/main/resources/static/assets/css/style2.css" type="text/css">
+    <link rel="stylesheet" href="" type="text/css">
 </head>
 <body>
     <h1>SS Enterprises</h1>
@@ -14,11 +14,31 @@
         <button type="submit">Get All products</button>
     </form>
 
-    <form action="/productslist/productslist" method="get">
+    <form action="productslist/productslistById" method="get">
         <label for="">Enter product id:</label>
         <input type="text" name="pid" placeholder="Enter a product id">
         <button type="submit" >Get this product info</button>
     </form>
+
+    <h3>Create new Product</h3>
+    <form action="/productslist" method="get">
+        <label for="pid">Enter product id:</label>
+        <input type="text" name="pid" id="pid" placeholder="Enter a product id"></input><br>
+        <label for="">Enter product name:</label>
+        <input type="text" name="productname" placeholder="Enter product name"><br>
+        <label for="">Enter product unit:</label>
+        <input type="text" name="unit" placeholder="Enter product unit"><br>
+        <label for="">Enter product rate:</label>
+        <input type="text" name="rate" placeholder="Enter product rate"><br>
+        <button type="submit" >Save and view all</button>
+    </form>
+    <h3>Update a  Product</h3>
+    <form action="productslist/update" method="get">
+        <label for="">Enter product id:</label>
+        <input type="text" name="pid" placeholder="Enter a product id">
+        <button type="submit" >Update this product</button>
+    </form>
+
     <ul>
         <li class="products">Products</li>
         <li><a href="">Create New</a></li>

@@ -6,22 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    table,td,th{
+        border: 1px solid;
+    }
+</style>
 <body>
-    <table style="border: 1px solid;">
+    <table>
         <tr>
             <th>Product ID</th>
             <th>Product Name</th>
             <th>Unit</th>
             <th>Rate</th>
         </tr>
-        <tr th:each="products : ${products}">
+        <tr th:each="products : ${products}" style="border: 1px solid;">
             <td th:text="${products.getPid()}"></td>
             <td th:text="${products.getProductname()}"></td>
             <td th:text="${products.getUnit()}"></td>
-            <td th:text="${products.getRate}"></td>
+            <td th:text="${products.getRate()}"></td>
 
 
         </tr>
     </table>
+
+    <h4 th:text="${productslist.getPid()}"></h4>
+    <h4 th:text="${stringData.toString()}"></h4>
 </body>
 </html>

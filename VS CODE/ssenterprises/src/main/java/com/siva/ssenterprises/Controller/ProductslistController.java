@@ -1,9 +1,4 @@
 package com.siva.ssenterprises.Controller;
-
-import java.util.Optional;
-
-import javax.swing.text.html.Option;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.siva.ssenterprises.Model.Productslist;
 import com.siva.ssenterprises.Service.ProductslistService;
+import org.springframework.web.bind.annotation.PostMapping;
+
+
 
 
 @Controller
@@ -29,8 +27,21 @@ public class ProductslistController {
         return productslistServ.retrieve(m);
     }
 
-    @GetMapping("/productslist?pid={pid}")
-    private String getProductById(@RequestParam("pid")int pid,Model model){
-        return productslistServ.retrieveone(pid,model);
+    @GetMapping("/productslistById")
+    private String getProductById(@RequestParam int pid,Model model){
+        return productslistServ.retrieveone(pid, model);
     }
+
+    @PostMapping
+    public String saveProduct(Productslist productslist,Model model){
+        return productslistServ.create(productslist, model);
+    }
+
+    @GetMapping("/update")
+    public String updateProduct(Productslist productslist,Model model){
+        return productslistServ.update(productslist, model);
+    }
+
+    
+    
 }

@@ -11,7 +11,7 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/index/productmanagement")
+    @GetMapping("/productmanagement")
     private String productmanagement(){
         return "ProductManagement";
     }
