@@ -47,6 +47,11 @@ public class Productslist implements Serializable {
         return productname;
     }
 
+    @Override
+    public String toString() {
+        return "Productslist [pid=" + pid + ", productname=" + productname + ", unit=" + unit + ", rate=" + rate + "]";
+    }
+
     public void setProductname(String productname) {
         this.productname = productname;
     }

@@ -42,6 +42,10 @@ public class ProductslistController {
         return productslistServ.update(productslist, model);
     }
 
+    @GetMapping("/del")
+    public String deleteProduct(Productslist productslist,Model model){
+        return productslistServ.delete(productslist, model);
+    }
     
     
 }

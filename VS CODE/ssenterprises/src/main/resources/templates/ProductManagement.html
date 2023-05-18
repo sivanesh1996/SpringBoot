@@ -21,7 +21,7 @@
     </form>
 
     <h3>Create new Product</h3>
-    <form action="/productslist" method="get">
+    <form action="/productslist" method="post">
         <label for="pid">Enter product id:</label>
         <input type="text" name="pid" id="pid" placeholder="Enter a product id"></input><br>
         <label for="">Enter product name:</label>
@@ -37,6 +37,12 @@
         <label for="">Enter product id:</label>
         <input type="text" name="pid" placeholder="Enter a product id">
         <button type="submit" >Update this product</button>
+    </form>
+    <h3>Delete a Product</h3>
+    <form action="productslist/del" method="get">
+        <label for="">Enter product id:</label>
+        <input type="text" name="pid" placeholder="Enter a product id">
+        <button type="submit" >Delete this product </button>
     </form>
 
     <ul>
